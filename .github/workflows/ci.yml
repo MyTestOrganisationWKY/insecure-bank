@@ -61,6 +61,11 @@ jobs:
 
       - name: build
         run: |
+          mvn package
+        shell: bash
+
+      - name: build-docker
+        run: |
           docker build -t test:latest .
         shell: bash
 
