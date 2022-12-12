@@ -27,7 +27,7 @@ jobs:
 
       - name: build
         run: |
-          docker build -t test:${{ env.tag-version }} .
+          docker build -t test:latest .
         shell: bash
 
       - name: Manifest Generation
@@ -45,7 +45,7 @@ jobs:
             --access-token "${{ secrets.GITHUB_TOKEN }}" \
             --aqua-key "${{ secrets.AQUA_KEY }}" \
             --aqua-secret "${{ secrets.AQUA_SECRET }}" \
-            --artifact-path "test:${{ env.tag-version }}" 
+            --artifact-path "test:latest" 
 
             # The docker image name:tag of the newly built image
             # --artifact-path "my-image-name:${{ env.tag-version }}" 
